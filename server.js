@@ -1,10 +1,11 @@
 const express = require("express");
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8000;
 const app = express();
 let count = 0;
 
 const insertData = function(req, res) {
-  res.send("" + count++);
+  count++;
+  res.send("" + count);
 };
 
 const getData = function(req, res) {

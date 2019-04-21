@@ -1,6 +1,6 @@
-FROM node:10.15.3-alpine as main-app
+FROM node:10.15.3-alpine
 WORKDIR /app
 RUN npm install
 COPY . /app
-EXPOSE 8080
+EXPOSE 8000
 CMD ["npm","start"]
