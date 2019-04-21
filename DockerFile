@@ -1,0 +1,12 @@
+FROM ./join_us_client
+WORKDIR /app/join_us_client
+COPY . /app/join_us_client
+RUN npm install
+RUN npm run build
+
+FROM node:10.15.3-alpine
+COPY . /app
+RUN npm install
+EXPOSE 8080
+ENV PORT 8080
+CMD ["node", "app.js"]
